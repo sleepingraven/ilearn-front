@@ -1,32 +1,25 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div id="app" class="w-100 h-100">
     <router-view />
   </div>
 </template>
 
+<!-- todo 便签 徽章 https://leetcode-cn.com/session/ -->
+<!-- todo 统计图 https://leetcode-cn.com/progress/ -->
+<!-- todo 评论 https://leetcode-cn.com/profile/articles/ -->
+<!-- todo 其他 https://leetcode-cn.com/list/problem -->
+
+<!-- todo 表单校验：前端 -->
+<!-- todo 数据校验：后端 -->
+
+<!-- todo 个人主页 -->
+<!-- todo 文章页 -->
+<!-- todo 验证码 -->
+
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>

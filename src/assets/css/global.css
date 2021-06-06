@@ -1,0 +1,149 @@
+/*
+    使卡片紧凑
+*/
+.card-body-adjust {
+    padding: 8px;
+}
+
+/* 
+	-webkit-line-clamp用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。常见结合属性：
+		display: -webkit-box; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。
+		-webkit-box-orient 必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 。
+ */
+.title-adjust {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*
+	防止滚动条出现导致页面的横向抖动
+*/
+.smooth-scroll {
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.smooth-scroll.modal-open {
+    overflow: hidden;
+}
+
+.keep-scroll {
+    overflow-y: scroll;
+}
+.keep-scroll.modal-open {
+    overflow-y: hidden;
+}
+
+/*
+	滚动条样式
+*/
+.app-scrollbar::-webkit-scrollbar {
+    /* 滑块宽度 */
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+.app-scrollbar::-webkit-scrollbar-thumb {
+    /* 弧度 */
+    border-radius: 10px;
+
+    /* 1. dark */
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);*/
+    /*background-color: #555;*/
+    /* 2. light non-gradient */
+    /*background-color: #F90;*/
+    /*background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)*/
+    /* 3. blue gradient */
+    /*background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, rgb(122, 153, 217)), color-stop(0.72, rgb(73, 125, 189)), color-stop(0.86, rgb(28, 58, 148)));*/
+    /* 4. blue non-gradient */
+    background-color: skyblue;
+    background-image: -webkit-linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.2) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0.2) 75%,
+            transparent 75%,
+            transparent
+    );
+}
+
+body {
+    transition: background-color 0.2s ease-in 0s;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.content-area .v-show-content {
+    padding: 0 !important;
+    /* 不生效 */
+    /*overflow-wrap: break-word;*/
+    word-break: break-all;
+}
+.content-area .v-show-content > :last-child {
+    margin-bottom: 0;
+}
+
+.content-area .v-show-content pre {
+    max-width: calc(100vw - 8em);
+}
+@media (min-width: 768px) {
+    .content-area .v-show-content pre {
+        max-width: calc(100vw - 12em);
+    }
+}
+@media (min-width: 992px) {
+    .content-area .v-show-content pre {
+        max-width: calc(100vw - 13em);
+    }
+}
+@media (min-width: 1200px) {
+    .content-area .v-show-content pre {
+        max-width: calc(100vw - 37.5em);
+    }
+    .reply-div > .v-note-wrapper {
+        max-width: calc(100vw - 31em);
+    }
+}
+
+.app-light-btn:not(:hover) {
+    background-color: white;
+    color: #6c757d;
+}
+.app-light-btn.active {
+    background-color: #f8f9fa!important;
+    color: #28A74F!important;
+}
+.app-light-btn-muted:not(.active):hover {
+    color: #6c757d!important;
+}
+
+.feather {
+    vertical-align: text-bottom;
+}
+
+.list-group-item-light-custom:not(:hover) {
+    background-color: #fdfdfe;
+}
+
+.anchor-container:not(:hover) .feather {
+    opacity: 0;
+    transition: color 0.15s ease-in-out,opacity 0.15s ease-in-out;
+}
+.anchor-container .feather {
+    color: rgba(0,123,255,0.5);
+}
+.anchor-container .feather:hover {
+    color: #007bff;;
+}
