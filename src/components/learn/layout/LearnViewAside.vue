@@ -15,7 +15,7 @@
         </div>
 
         <div class="p-4">
-          <h4 class="font-italic">链接</h4>
+          <h4>链接</h4>
           <ol class="list-unstyled mb-0">
             <li v-for="(r, ri) in course.refers" :key="ri">
               <a :href="r.href" target="_blank">{{ r.title }}</a>

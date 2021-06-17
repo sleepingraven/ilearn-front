@@ -4,6 +4,9 @@
     <Breadcrumb :items="[{ title: '首页', url: '/' }, { title: '课程' }]" />
 
     <div class="container">
+      <!--<form>
+        <input v-model="courseQuery" @blur="searchCourse" />
+      </form>-->
       <div class="row row-cols-md-4 justify-content-start">
         <div class="col my-2 course-card-container" v-for="(course, ci) in courses" :key="ci">
           <a class="text-decoration-none" :href="'/learn/' + course.id">
@@ -25,6 +28,7 @@
       </div>
 
       <Pagination
+        id="pageComponent"
         class="mt-4"
         :default-page-size="page.pageSize"
         :total="page.totalNum"
@@ -48,6 +52,7 @@ export default {
       pageSize: 8,
       totalNum: 0,
     },
+    courseQuery: '',
   }),
   created() {
     this.fetchCourseList(0);
@@ -68,6 +73,35 @@ export default {
             let resData = res.data.data;
             self.courses = resData.data;
             self.page.totalNum = resData.totalNum;
+          } else {
+            this.$toast.show({
+              title: '获取课程信息失败',
+              msg: res.data.data.errorMsg,
+              icon: 'danger',
+            });
+          }
+        })
+        .catch(() => {
+          this.$toast.show({
+            title: '获取课程信息失败',
+            msg: '连接出现异常',
+            icon: 'danger',
+          });
+        });
+    },
+    searchCourse() {
+      const self = this;
+      self.$http
+        .get('/course/preview/like', {
+          params: {
+            title: self.courseQuery,
+          },
+        })
+        .then((res) => {
+          if (res.data.status === 'success') {
+            let resData = res.data.data;
+            self.courses = resData;
+            $('#pageComponent').css('display', 'none');
           } else {
             this.$toast.show({
               title: '获取课程信息失败',
