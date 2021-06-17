@@ -32,6 +32,7 @@
     - [6.1 课程管理](#61-课程管理)
     - [6.2 考试管理](#62-考试管理)
     - [6.3 权限管理](#63-权限管理)
+- [四、链接](#四-链接)
 
 <!-- /code_chunk_output -->
 
@@ -271,7 +272,9 @@ yarn serve
 
 ![admin-auth.png][file:admin-auth.png]
 
+## 四、链接
 
+- [ilearn](https://github.com/sleepingraven/ilearn)
 
 
 [file:login-page.png]: .github/readme/login-page.png
